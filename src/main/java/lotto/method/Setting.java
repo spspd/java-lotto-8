@@ -6,8 +6,8 @@ import java.util.Collections;
 
 import lotto.Lotto;
 public class Setting {
-    public Lotto winLotto ;
-    public int bonus_numb ;
+    public static Lotto winLotto ;
+    public static int bonus_numb ;
     public void setting_play(){
         System.out.println("당첨 번호를 입력해 주세요.");
         winNumbers();
