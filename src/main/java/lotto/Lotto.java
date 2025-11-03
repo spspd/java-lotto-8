@@ -21,10 +21,17 @@ public class Lotto {
         System.out.println(paid.numbers);
         return paid;
     }
+    public static Lotto makeLotto(List<Integer> numbers){
+        Lotto paid = new Lotto(numbers);
+        System.out.println(paid.numbers);
+        return paid;
+    }
 
     public List<Integer> getNumbers() {
         return numbers;
     }
+
+    
     
 
     // TODO: 추가 기능 구현
