@@ -17,7 +17,9 @@ public class Lotto {
     }
 
     public static Lotto makeLotto(){
-        Lotto paid = new Lotto(camp.nextstep.edu.missionutils.Randoms.pickUniqueNumbersInRange(1, 45, 6));
+        List<Integer> target =  camp.nextstep.edu.missionutils.Randoms.pickUniqueNumbersInRange(1, 45, 6);
+        target.sort(null);
+        Lotto paid = new Lotto(target);
         System.out.println(paid.numbers);
         return paid;
     }

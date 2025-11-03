@@ -24,7 +24,7 @@ public class Buy {
         int amount = amountLotto(money);
         System.out.println(amount + "개를 구매했습니다.");
         payLotto(amount);
-        
+        System.out.println(amount);
         return amount;
     }
     public static int amountLotto(int money){

@@ -2,18 +2,17 @@ package lotto.method;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 import lotto.Lotto;
 public class Setting {
     public Lotto winLotto ;
     public int bonus_numb ;
-    public void input_numbers(){
+    public void setting_play(){
         System.out.println("당첨 번호를 입력해 주세요.");
         winNumbers();
         System.out.println("보너스 번호를 입력해 주세요.");
         bonusNumber();
-
-
     }
 
     public void winNumbers(){
@@ -31,6 +30,7 @@ public class Setting {
         for (int i = 0; i < numbers.length; i++) {
             numbers_int.add(Integer.parseInt(numbers[i]));
         }   
+        Collections.sort(numbers_int);
         winLotto = Lotto.makeLotto(numbers_int);
     }
 
