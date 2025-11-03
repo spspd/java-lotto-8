@@ -34,7 +34,9 @@ public class Lotto {
         return paid;
     }
     public static Lotto makeLotto(List<Integer> numbers){
-        Lotto paid = new Lotto(numbers);
+        List<Integer> mutable_dump = new ArrayList<>(numbers);
+        mutable_dump.sort(null);
+        Lotto paid = new Lotto(mutable_dump);
         return paid;
     }
 
