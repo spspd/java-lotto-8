@@ -11,26 +11,36 @@ public class Setting {
     public static Lotto winLotto ;
     public static int bonus_numb ;
     public void setting_play(){
-       
-        while(winLotto == null){
+        set_win();
+        set_bonus();
+        
+
+    }
+    public void set_win(){
+        int attempts = 0;
+        while(winLotto == null && attempts < 6){
              System.out.println("\n당첨 번호를 입력해 주세요.");
             try {
                 winNumbers();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
+                attempts++;
             }
         }
-        
-        while(bonus_numb == 0){
+    }
+    public void set_bonus(){
+        int attempts = 0;
+        while(bonus_numb == 0 && attempts < 6){
             System.out.println("\n보너스 번호를 입력해 주세요.");
             try {
                 bonusNumber();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
+                attempts++;
             }
         }
     }
-
+    
     public void winNumbers(){
         String a = camp.nextstep.edu.missionutils.Console.readLine();
         String[] numbers ;
