@@ -82,7 +82,7 @@ public class Play {
         for (int i = 0; i < result.length; i++) {
             sum += result[i]* PRIZE.values()[i].getMoney();
         }
-        System.out.println("총 수익률은 " + sum*100.0/lotto.method.Buy.list_lotto.size()/1000 + "%입니다.");
+        System.out.println("총 수익률은 " +Math.round(sum*100.0/lotto.method.Buy.list_lotto.size()/100)/10 + "%입니다.");
     } 
 
 }
