@@ -21,6 +21,7 @@ public class Play {
     }    
 
     public void play(){
+        result = new int[6];
         for (int i = 0; i < lotto.method.Buy.list_lotto.size(); i++) {
             PRIZE prize = check_same(lotto.method.Buy.list_lotto.get(i)); 
             result[prize.ordinal()]++;
