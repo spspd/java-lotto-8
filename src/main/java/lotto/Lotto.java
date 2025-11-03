@@ -16,5 +16,16 @@ public class Lotto {
         }
     }
 
+    public static Lotto makeLotto(){
+        Lotto paid = new Lotto(camp.nextstep.edu.missionutils.Randoms.pickUniqueNumbersInRange(1, 45, 6));
+        System.out.println(paid.numbers);
+        return paid;
+    }
+
+    public List<Integer> getNumbers() {
+        return numbers;
+    }
+    
+
     // TODO: 추가 기능 구현
 }

@@ -1,5 +1,6 @@
 package lotto;
 
+
 import java.util.List;
 
 public class Application {
@@ -7,6 +8,9 @@ public class Application {
         // TODO: 프로그램 구현
         int amount = lotto.method.Buy.buyLotto();
         System.out.println(amount);
+        List<Lotto> list_lotto = lotto.method.Buy.list_lotto;
+        
+
 
     }
 }
