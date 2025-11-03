@@ -1,16 +1,16 @@
 package lotto.method;
 
 import lotto.Lotto;
-import lotto.method.Setting;
 
 public class Play {
+    public static int[] result = new int[6];
     public enum PRIZE {
         ZERO(0),
-        FIVE(5_000),
-        FOUR(50_000),
-        THREE(1_500_000),
+        ONE(2_000_000_000),
         TWO(30_000_000),
-        ONE(2_000_000_000);
+        THREE(1_500_000),
+        FOUR(50_000),
+        FIVE(5_000);
         private final int money;
         public int getMoney() {
             return money;
@@ -20,6 +20,13 @@ public class Play {
         }
     }    
 
+    public void play(){
+        for (int i = 0; i < lotto.method.Buy.list_lotto.size(); i++) {
+            PRIZE prize = check_same(lotto.method.Buy.list_lotto.get(i)); 
+            result[prize.ordinal()]++;
+        }
+
+    }
 
     public static PRIZE check_same(Lotto paid){
 
@@ -57,5 +64,25 @@ public class Play {
         return PRIZE.ZERO;
     }
 
+    public void print_result(){
+        System.out.println();
+        System.out.println("당첨 통계");
+        System.out.println("---");  
+        System.out.println("3개 일치 (5,000원) - " + result[PRIZE.FIVE.ordinal()] + "개");
+        System.out.println("4개 일치 (50,000원) - " + result[PRIZE.FOUR.ordinal()] + "개");
+        System.out.println("5개 일치 (1,500,000원) - " + result[PRIZE.THREE.ordinal()] + "개"); 
+        System.out.println("5개 일치, 보너스 볼 일치 (30,000,000원) - " + result[PRIZE.TWO.ordinal()] + "개");
+        System.out.println("6개 일치 (2,000,000,000원) - " + result[PRIZE.ONE.ordinal()] + "개");
+        // 이것도 enum에 넣고싶은데
+        print_rate();
+
+    }
+    public static void print_rate(){
+        int sum = 0;
+        for (int i = 0; i < result.length; i++) {
+            sum += result[i]* PRIZE.values()[i].getMoney();
+        }
+        System.out.println("총 수익률은 " + sum*100.0/lotto.method.Buy.list_lotto.size()/1000 + "%입니다.");
+    } 
 
 }

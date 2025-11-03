@@ -11,7 +11,7 @@ public class Buy {
     public static int buyLotto(){
 
         // TODO : 길이 넘음 - 각 함수 호출만 으로 분리필요
-        System.out.println("구입금액을 입력해 주세요.");
+        System.out.println("\n" + "구입금액을 입력해 주세요.");
         int money = 0;
 
         try{
@@ -22,9 +22,8 @@ public class Buy {
             throw new IllegalArgumentException("[ERROR] 입력 오류(나중에 바꿈)"); 
         }
         int amount = amountLotto(money);
-        System.out.println(amount + "개를 구매했습니다.");
+        System.out.println("\n" +amount + "개를 구매했습니다.");
         payLotto(amount);
-        System.out.println(amount);
         return amount;
     }
     public static int amountLotto(int money){

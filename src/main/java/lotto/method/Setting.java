@@ -9,9 +9,9 @@ public class Setting {
     public static Lotto winLotto ;
     public static int bonus_numb ;
     public void setting_play(){
-        System.out.println("당첨 번호를 입력해 주세요.");
+        System.out.println("\n당첨 번호를 입력해 주세요.");
         winNumbers();
-        System.out.println("보너스 번호를 입력해 주세요.");
+        System.out.println("\n보너스 번호를 입력해 주세요.");
         bonusNumber();
     }
 
@@ -36,14 +36,16 @@ public class Setting {
 
     public void bonusNumber(){
         //TODO
+        int numb = 0;
         try{
-            camp.nextstep.edu.missionutils.Console.readLine();
+            String temp =camp.nextstep.edu.missionutils.Console.readLine();
+            numb = Integer.parseInt(temp);
         }
         catch (NumberFormatException e){
             throw new IllegalArgumentException("[ERROR] 보너스입력 오류(나중에 바꿈)"); 
         }
         //validate_bonusNumber(); trycatch로 대체
-        bonus_numb = Integer.parseInt(camp.nextstep.edu.missionutils.Console.readLine());
+        bonus_numb = numb;
         
     }
 

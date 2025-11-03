@@ -25,7 +25,6 @@ public class Lotto {
     }
     public static Lotto makeLotto(List<Integer> numbers){
         Lotto paid = new Lotto(numbers);
-        System.out.println(paid.numbers);
         return paid;
     }
 
